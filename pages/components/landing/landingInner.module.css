@@ -1,11 +1,11 @@
 /* GRID STYLES */
-/* Background with grid gap = 2px border throughout */
+/* Background with grid gap = 6px border throughout */
 .left,
 .right {
 	background-color: black;
 	display: grid;
 	grid-template-rows: auto 2fr 1fr 1fr 1.618fr 1.618fr;
-	grid-gap: 3px;
+	grid-gap: 6px;
 	height: 100%;
 }
 .left {
@@ -15,7 +15,7 @@
 	grid-column: 2;
 }
 .other {
-	grid-row: 1 / 7;
+	grid-row: 1 / 6;
 	background-color: white;
 }
 
@@ -51,6 +51,11 @@
 	background-color: white;
 	height: 100%;
 }
+.line {
+	height: 100%;
+	border-left: 6px solid black;
+	margin-left: 50%;
+}
 .lines {
 	height: 100%;
 	border-left: 6px solid black;
@@ -65,17 +70,19 @@
 }
 
 .middle_color {
-	background-color: yellow;
+	background-color: orange;
+	grid-row: 5 / 6;
 }
 .bottom_corner {
 	background-color: white;
+	grid-row: 6;
 }
 .title {
 	grid-row: 1 / 2.5;
 }
 .image_container {
 	position: relative;
-	grid-row: 2.5 / 7;
+	grid-row: 2.5 / 6;
 	padding: 0.5rem;
 	height: 100%;
 	width: 100%;

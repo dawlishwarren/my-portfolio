@@ -46,9 +46,11 @@ const landingInner = ({ data: { name, id, header, text, image } }) => {
 					<div className={styles.lines}></div>
 				</div>
 				<div className={styles.middle_color}></div>
-				<div className={styles.bottom_corner}></div>
+				<div className={styles.bottom_corner}>
+					<div className={styles.line}></div>
+				</div>
 			</div>
-			{/* Right or Left */}
+			{/* Other side */}
 			<div className={determineOtherSide(id)}>
 				<div className={styles.title}>
 					<h2 className={styles.name}>{name}</h2>
@@ -62,6 +64,7 @@ const landingInner = ({ data: { name, id, header, text, image } }) => {
 				.card_container {
 					display: grid;
 					grid-template-columns: ${determineColumnLayout(id)};
+					grid-template-rows: 100%;
 					height: 100%;
 					width: 100%;
 					background: black;
