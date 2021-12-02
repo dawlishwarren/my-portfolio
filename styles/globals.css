@@ -17,5 +17,5 @@ a {
 
 :root {
 	--width: calc((var(--height) * 1.618));
-	--height: 90vh;
+	--height: 95vh;
 }

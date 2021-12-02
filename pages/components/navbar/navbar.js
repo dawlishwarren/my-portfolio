@@ -22,7 +22,6 @@ export default function Navbar({ home, inner, themes }) {
 	//////////////// This is how I've got it to work but I wonder if pulling from local storage is a clunky way to implement
 	//////////////// Console log shows that the themes passed in as a prop from layout.js is clearly readable
 	//////////////// But when I try to set that array to be mapped it has issues rendering
-	console.log(themes);
 	useEffect(() => {
 		// Get all available themes
 		const allThemes = getAllThemesFromLocalStorage("all-themes");
@@ -34,7 +33,7 @@ export default function Navbar({ home, inner, themes }) {
 		}
 
 		const contextThemes = getThemes();
-		console.log(contextThemes);
+		// console.log(contextThemes);
 
 		const loadedThemes = Object.values(themesToArray[0][1]);
 

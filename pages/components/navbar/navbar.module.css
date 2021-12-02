@@ -1,9 +1,10 @@
 .navbar {
 	display: block;
-	height: 6vh;
+	height: 3vh;
 	width: 100%;
 	padding: 0;
 	margin: 0;
+	font-family: "Quicksand", sans-serif;
 }
 .navbar_nav {
 	display: flex;

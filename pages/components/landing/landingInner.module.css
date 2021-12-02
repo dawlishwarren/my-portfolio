@@ -1,0 +1,118 @@
+/* GRID STYLES */
+/* Background with grid gap = 2px border throughout */
+.left,
+.right {
+	background-color: black;
+	display: grid;
+	grid-template-rows: auto 2fr 1fr 1fr 1.618fr 1.618fr;
+	grid-gap: 3px;
+	height: 100%;
+}
+.left {
+	grid-column: 1;
+}
+.right {
+	grid-column: 2;
+}
+.other {
+	grid-row: 1 / 7;
+	background-color: white;
+}
+
+.title,
+.image_container {
+	background-color: white;
+}
+.top_corner {
+	grid-row: 1 / 2;
+	height: 2rem;
+	background-color: grey;
+}
+.textbox {
+	background-color: white;
+	grid-row: 2 / 3;
+	padding: 1rem;
+}
+
+.link_box {
+	background-color: white;
+	grid-row: 3 / 4;
+}
+
+.link_inner {
+	max-width: 100%;
+	height: 100%;
+	text-align: center;
+	padding: 1rem;
+}
+
+.middle_with_lines {
+	grid-row: 4 / 5;
+	background-color: white;
+	height: 100%;
+}
+.lines {
+	height: 100%;
+	border-left: 6px solid black;
+	margin-left: 3rem;
+}
+.lines::before {
+	height: 100%;
+	display: block;
+	content: "";
+	border-left: 6px solid black;
+	margin-left: 10px;
+}
+
+.middle_color {
+	background-color: yellow;
+}
+.bottom_corner {
+	background-color: white;
+}
+.title {
+	grid-row: 1 / 2.5;
+}
+.image_container {
+	position: relative;
+	grid-row: 2.5 / 7;
+	padding: 0.5rem;
+	height: 100%;
+	width: 100%;
+}
+
+/* Text styles */
+.name,
+.link,
+.textbox {
+	font-family: "Quicksand", sans-serif;
+}
+.name {
+	text-align: center;
+	font-size: 3rem;
+}
+
+.name::before,
+.name::after {
+	content: "";
+	display: inline-block;
+	width: 3rem;
+	border-top: 3px solid black;
+	transform: translateY(-1rem);
+	margin: 0 1rem;
+}
+
+.link {
+	max-width: 100%;
+	font-size: 2rem;
+	display: block;
+	text-decoration: none;
+	padding-bottom: 0.5rem;
+	transition: text-decoration 0.5s;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+/* Other */

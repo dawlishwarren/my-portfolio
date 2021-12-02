@@ -3,8 +3,8 @@
 	flex-direction: row;
 	min-height: 90vh;
 	max-width: calc(90vh * 1.618);
-	margin: 2vh auto;
-	margin-top: 6vh;
+	margin: 0.5vh auto;
+	margin-top: 4vh;
 }
 .column {
 	display: flex;
@@ -35,6 +35,7 @@
 
 .column.active > h2.title {
 	display: block;
+	min-width: 100%;
 }
 
 .column.inactive {
