@@ -12,7 +12,11 @@
 					"background": "linear-gradient(to right, #f8f8f8, #6c7983)",
 					"dropdown": "#b2becd"
 				},
-				"border": "#12181b"
+				"border": "#12181b",
+				"accent": {
+					"primary": "#cc4f1f",
+					"secondary": "#bdc1cc"
+				}
 			}
 		},
 		"dark": {
@@ -25,7 +29,11 @@
 					"background": "linear-gradient(to right, #454e56, #12181b)",
 					"dropdown": "#12181b"
 				},
-				"border": "#dbe1e8"
+				"border": "#dbe1e8",
+				"accent": {
+					"primary": "#082032",
+					"secondary": "#FF4C29"
+				}
 			},
 			"name": "darkTheme",
 			"title": "Dark"
@@ -40,7 +48,11 @@
 					"background": "linear-gradient(to right, #454e56, #12181b)",
 					"dropdown": "#cda882"
 				},
-				"border": "#eadbcb"
+				"border": "#eadbcb",
+				"accent": {
+					"primary": "#332718",
+					"secondary": "#7D803C"
+				}
 			},
 			"name": "sepiaTheme",
 			"title": "Sepia"

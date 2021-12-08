@@ -118,19 +118,30 @@ export default function Navbar({ home, inner, themes }) {
 						</li>
 						{!home && (
 							<>
+								{/* TODO: Make a sliding menu with these options */}
 								<li className={`${[styles.nav_item]}`}>
 									<Link href="/">
 										<a href="">Home</a>
 									</Link>
 								</li>
 								<li className={`${[styles.nav_item]}`}>
-									<Link href="/">
+									<Link href="/contact">
 										<a href="">Contact</a>
 									</Link>
 								</li>
 								<li className={`${[styles.nav_item]}`}>
-									<Link href="/">
+									<Link href="/blog">
 										<a href="">Blog</a>
+									</Link>
+								</li>
+								<li className={`${[styles.nav_item]}`}>
+									<Link href="/palettize">
+										<a href="">Palettize</a>
+									</Link>
+								</li>
+								<li className={`${[styles.nav_item]}`}>
+									<Link href="/portfolio">
+										<a href="">Portfolio</a>
 									</Link>
 								</li>
 							</>
