@@ -1,9 +1,12 @@
-import Layout from "./components/layout/layout";
+import AboutInfo from './components/about/AboutInfo';
+import EducationTimeline from './components/about/EducationTimeline';
+import Layout from './components/layout/layout';
 
 export default function About() {
 	return (
-		<Layout inner>
-			<h1>About me</h1>
+		<Layout inner pageName={'About'}>
+			<AboutInfo />
+			<EducationTimeline />
 		</Layout>
 	);
 }

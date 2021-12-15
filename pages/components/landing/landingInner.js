@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
-import styles from "./landingInner.module.css";
-import Link from "next/link";
-import Image from "next/image";
-import ThemeContext from "../../../context/themeContext/theme-context";
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import styles from './landingInner.module.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import ThemeContext from '../../../context/themeContext/theme-context';
 // import { isActiveTheme } from "../../../utils/validation";
 
 const landingInner = ({ data: { name, id, header, text, image } }) => {
 	const { activeTheme, loading } = useContext(ThemeContext);
 
 	function isActiveTheme() {
-		if (activeTheme !== undefined || null || "") {
+		if (activeTheme !== undefined || null || '') {
 			return activeTheme;
 		}
 	}
@@ -35,7 +35,7 @@ const landingInner = ({ data: { name, id, header, text, image } }) => {
 	}
 
 	return (
-		<div className="card_container">
+		<div className='card_container'>
 			{/* Left or Right */}
 			<div className={determineLeftOrRight(id)}>
 				<div className={styles.top_corner}></div>
@@ -46,8 +46,8 @@ const landingInner = ({ data: { name, id, header, text, image } }) => {
 				<div className={styles.link_box}>
 					<div className={styles.link_inner}>
 						<Link href={name.toLowerCase()}>
-							<a href="" className={styles.link}>
-								{" "}
+							<a href='' className={styles.link}>
+								{' '}
 								&gt; More
 							</a>
 						</Link>
@@ -67,7 +67,7 @@ const landingInner = ({ data: { name, id, header, text, image } }) => {
 					<h2 className={styles.name}>{name}</h2>
 				</div>
 				<div className={styles.image_container}>
-					<Image src={image} alt={name} layout="fill" />
+					<Image src={image} alt={name} layout='fill' />
 				</div>
 			</div>
 

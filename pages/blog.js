@@ -1,9 +1,5 @@
-import Layout from "./components/layout/layout";
+import Layout from './components/layout/layout';
 
 export default function Blog() {
-	return (
-		<Layout inner>
-			<h1>Blog</h1>
-		</Layout>
-	);
+	return <Layout inner pageName={'Blog'}></Layout>;
 }

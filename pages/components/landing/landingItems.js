@@ -1,59 +1,32 @@
-import React, { useContext, useState } from "react";
-import Layout from "../layout/layout";
-import styles from "./landingItems.module.css";
-import ThemeContext from "../../../context/themeContext/theme-context";
-import LandingInner from "./landingInner";
-import aboutMe from "../../../img/about_me.jpg";
-import blog from "../../../img/blog.jpeg";
-import portfolio from "../../../img/portfolio.jpg";
-import palette from "../../../img/palette.jpg";
-import contact from "../../../img/contact.jpg";
+import React, { useContext, useState, useEffect } from 'react';
+import Layout from '../layout/layout';
+import styles from './landingItems.module.css';
+import ThemeContext from '../../../context/themeContext/theme-context';
+import LandingInner from './landingInner';
+import { landingItemData } from '../../../utils/dataToMap';
 
 const LandingItems = () => {
+	// State management
+	// Loading the theme context
 	const { activeTheme, loading } = useContext(ThemeContext);
+
+	// Setting component state
 	const [landingState, setState] = useState({
 		activeObject: null,
-		objects: [
-			{
-				id: 0,
-				name: "About",
-				header: "Who am I?",
-				text: "I am a self-taught web dev who has come from a background in professional music, find out how I am taking my artistic inspirations to the field of technology",
-				image: aboutMe,
-			},
-			{
-				id: 1,
-				name: "Blog",
-				header: "What have I been up to?",
-				text: "Follow my process as I learn technology stacks and find out how I made this website",
-				image: blog,
-			},
-			{
-				id: 2,
-				name: "Portfolio",
-				header: "Where can I see your work?",
-				text: "See my work with detailed explanation as to what I have created",
-				image: portfolio,
-			},
-			{
-				id: 3,
-				name: "Palettize",
-				header: "Create intuitive colour palettes with ease!",
-				text: "A simple app for building but also utilising colour palettes, as a bonus check out how you can edit my entire site",
-				image: palette,
-			},
-			{
-				id: 4,
-				name: "Contact",
-				header: "Get in touch",
-				text: "Send me an enquiry or simply find my contact details to reach me",
-				image: contact,
-			},
-		],
+		objects: [],
 	});
-
 	const { activeObject, objects } = landingState;
 
+	// Importing the array of data to be mapped
+	useEffect(() => {
+		setState({
+			...landingState,
+			objects: landingItemData,
+		});
+	}, [setState]);
+
+	////// Local methods //////
+	// Active object setting and styling
 	const setActiveObject = (index) => {
 		setState({ ...landingState, activeObject: objects[index] });
 	};
@@ -67,12 +40,8 @@ const LandingItems = () => {
 
 	function getAppropriateTitleRotationClass(index) {
 		if (activeObjectExists() && activeObject.id < index + 1) {
-			// add rotate 0
 			return `${styles.rotateZero}`;
-		} else if (activeObjectExists() && activeObject.id > index + 1) {
-			// rotate 180
-		}
-		return `${styles.rotateOneEighty}`;
+		} else return `${styles.rotateOneEighty}`;
 	}
 
 	function activeObjectExists() {
@@ -80,7 +49,7 @@ const LandingItems = () => {
 	}
 
 	function isActiveTheme() {
-		if (activeTheme !== undefined || null || "") {
+		if (activeTheme !== undefined || null || '') {
 			return activeTheme;
 		}
 	}
@@ -91,7 +60,7 @@ const LandingItems = () => {
 					.${styles.container} {
 						border: ${!loading && isActiveTheme()
 								? activeTheme.colors.border
-								: "black"}
+								: 'black'}
 							solid 5px;
 					}
 				`}</style>
@@ -109,7 +78,7 @@ const LandingItems = () => {
 								className={[
 									styles.title,
 									getAppropriateTitleRotationClass(index),
-								].join(" ")}>
+								].join(' ')}>
 								{object.name}
 							</h2>
 						)}
