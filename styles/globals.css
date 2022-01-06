@@ -19,3 +19,7 @@ a {
 	--width: calc((var(--height) * 1.618));
 	--height: 95vh;
 }
+
+ul {
+	padding: 0;
+}
