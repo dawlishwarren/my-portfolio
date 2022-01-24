@@ -7,7 +7,6 @@ body {
 }
 
 a {
-	color: inherit;
 	text-decoration: none;
 }
 
@@ -18,6 +17,7 @@ a {
 :root {
 	--width: calc((var(--height) * 1.618));
 	--height: 95vh;
+	--nav-size: 5rem;
 }
 
 ul {
