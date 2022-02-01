@@ -1,24 +1,24 @@
-import React, { useContext, useState } from "react";
-import PropTypes from "prop-types";
-import styles from "./navigation.module.css";
-import ThemeContext from "../../../../context/themeContext/theme-context";
+import React, { useContext, useState } from 'react';
+import styles from './navigation.module.css';
+import ThemeContext from '../../../../context/themeContext/theme-context';
 
 const NavItem = (props) => {
 	const { activeTheme, loading } = useContext(ThemeContext);
-	const [open, setOpen] = useState(false);
 	return (
 		<>
 			{!loading && (
 				<>
 					<li className={styles.nav_item}>
 						<a
-							href="#"
+							href='#'
 							className={styles.icon_button}
-							onClick={() => setOpen(!open)}>
+							onClick={() => {
+								props.setMenuStatus(!props.isOpen);
+							}}>
 							{props.icon}
 						</a>
 
-						{open && props.children}
+						{props.isOpen && props.children}
 					</li>
 					<style jsx>{`
 						.${styles.icon_button} {
@@ -32,7 +32,5 @@ const NavItem = (props) => {
 		</>
 	);
 };
-
-NavItem.propTypes = {};
 
 export default NavItem;

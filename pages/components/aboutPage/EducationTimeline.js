@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './about.module.css';
 
 const EducationTimeline = () => {
 	return (
 		<div>
-			<p>Education timeline</p>
+			<h2 className={styles.title}>My Timeline</h2>
 		</div>
 	);
 };

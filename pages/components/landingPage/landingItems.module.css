@@ -5,6 +5,7 @@
 	max-width: calc(90vh * 1.618);
 	margin: 0.5vh auto;
 	margin-top: 4vh;
+	z-index: 1;
 }
 .column {
 	display: flex;

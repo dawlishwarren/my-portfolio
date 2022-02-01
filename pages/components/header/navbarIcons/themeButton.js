@@ -1,32 +1,31 @@
-import React, { useContext, useState, useEffect } from "react";
-import ThemeContext from "../../../../context/themeContext/theme-context";
-import { getAllThemesFromLocalStorage } from "../../../../utils/localStorage";
-import Spinner from "../../spinner/spinner";
-// import styles from "./themeButton.module.css"
-import styles from "./navigation.module.css";
+import React, { useContext, useState, useEffect } from 'react';
+import ThemeContext from '../../../../context/themeContext/theme-context';
+import { getAllThemesFromLocalStorage } from '../../../../utils/localStorage';
+import Spinner from '../../spinner/spinner';
+import styles from './navigation.module.css';
 
 function ThemeButton() {
 	const { setActiveTheme, loading } = useContext(ThemeContext);
 
 	const [themeButtonState, setState] = useState({
 		colorThemes: [],
-		activeTheme: "",
+		activeTheme: '',
 		themeButtonLoading: true,
 		dropdownHidden: true,
 	});
 
 	useEffect(() => {
 		// Get all available themes
-		const allThemes = getAllThemesFromLocalStorage("all-themes");
+		const allThemes = getAllThemesFromLocalStorage('all-themes');
 		const themesToArray = [];
 
 		// Populate an array with them
 		for (var i in allThemes) {
 			themesToArray.push([i, allThemes[i]]);
 		}
-
 		const loadedThemes = Object.values(themesToArray[0][1]);
 
+		// Update state
 		setState({
 			...themeButtonState,
 			colorThemes: loadedThemes,
@@ -51,7 +50,7 @@ function ThemeButton() {
 			) : (
 				<div className={`${[styles.nav_item]} ${[styles.has_dropdown]}`}>
 					<a
-						href="#"
+						href='#'
 						className={styles.button}
 						// onClick={() => toggleDropdownVisibility()}
 					>
@@ -60,7 +59,7 @@ function ThemeButton() {
 					<ul className={styles.dropdown}>
 						{themeButtonState.colorThemes.map((theme, index) => (
 							<li className={styles.dropdown_item} key={theme.id}>
-								<a href="#" onClick={() => setButtonActiveTheme(index)}>
+								<a href='#' onClick={() => setButtonActiveTheme(index)}>
 									{theme.title}
 								</a>
 							</li>

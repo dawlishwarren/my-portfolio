@@ -1,20 +1,28 @@
-import React, { useContext } from "react";
-import ThemeContext from "../../../context/themeContext/theme-context";
-import PropTypes from "prop-types";
-import styles from "./header.module.css";
-import Navbar from "./navbar/navbar";
-import NavItem from "./navbar/navItem";
-import NavigationMenu from "./navbar/navigationMenu";
-import ThemesDropdownMenu from "./navbar/themesDropdownMenu";
+import React, { useContext, useState } from 'react';
+import ThemeContext from '../../../context/themeContext/theme-context';
+import PropTypes from 'prop-types';
+import styles from './header.module.css';
+import Navbar from './navbar/navbar';
+import NavItem from './navbar/navItem';
+import NavigationSideMenu from './navbar/navigationSideMenu';
+import ThemesDropdownMenu from './navbar/themesDropdownMenu';
 
 const Header = ({ home, inner, pageName }) => {
 	const { activeTheme, loading } = useContext(ThemeContext);
+	const [isColorMenuOpen, setIsColorMenuOpen] = useState(false);
+	const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 	return (
 		<header className={styles.header_container}>
-			{home && (
+			{home && !loading && (
 				<div className={styles.home_container}>
-					{/* <ThemeButton /> */}
-					<h4>Home</h4>
+					<Navbar>
+						<NavItem
+							icon={<i className={`fas fa-palette `}></i>}
+							isOpen={isColorMenuOpen}
+							setMenuStatus={setIsColorMenuOpen}>
+							<ThemesDropdownMenu setMenuStatus={setIsColorMenuOpen} />
+						</NavItem>
+					</Navbar>
 				</div>
 			)}
 			{inner && !loading && (
@@ -24,19 +32,24 @@ const Header = ({ home, inner, pageName }) => {
 							<h3>{pageName}</h3>
 						</div>
 						<Navbar>
-							<NavItem icon={<i className={`fas fa-palette `}></i>}>
-								<ThemesDropdownMenu />
+							<NavItem
+								icon={<i className={`fas fa-palette `}></i>}
+								isOpen={isColorMenuOpen}
+								setMenuStatus={setIsColorMenuOpen}>
+								<ThemesDropdownMenu setMenuStatus={setIsColorMenuOpen} />
 							</NavItem>
-							<NavItem icon={<i className={"fas fa-bars"}></i>}>
-								<NavigationMenu name={pageName} />
+							<NavItem
+								icon={<i className={'fas fa-bars'}></i>}
+								isOpen={isNavMenuOpen}
+								setMenuStatus={setIsNavMenuOpen}>
+								<NavigationSideMenu
+									name={pageName}
+									setMenuStatus={setIsNavMenuOpen}
+									isOpen={isNavMenuOpen}
+								/>
 							</NavItem>
 						</Navbar>
 					</div>
-					<style jsx>{`
-						.${styles.inner_container} {
-							border-bottom: 6px solid ${activeTheme.colors.border};
-						}
-					`}</style>
 				</>
 			)}
 		</header>

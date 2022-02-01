@@ -1,4 +1,38 @@
-.container {
-	margin: 0;
-	padding: 0;
+.innerOverlay {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background: none;
+	display: block;
+}
+
+.horizontal_margin {
+	height: 100%;
+	width: 6px;
+	margin: 0 auto;
+	background: black;
+	position: fixed;
+	top: 0;
+	left: 10vw;
+}
+.vertical_margin {
+	height: 6px;
+	width: 100%;
+	margin: auto 0;
+	background: black;
+	position: absolute;
+	top: 20vh;
+	left: 0;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-items: space-between;
+}
+
+.content_container {
+	width: 90vw;
+	height: 90vh;
+	margin-left: 10vw;
 }
