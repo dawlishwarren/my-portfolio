@@ -1,12 +1,13 @@
 .innerOverlay {
 	width: 100vw;
 	height: 100vh;
-	position: relative;
+	position: fixed;
 	background: none;
 	display: block;
+	overflow: hidden;
 }
 
-.horizontal_margin {
+.vertical_margin {
 	height: 100%;
 	width: 6px;
 	margin: 0 auto;
@@ -15,7 +16,7 @@
 	top: 0;
 	left: 10vw;
 }
-.vertical_margin {
+.horizontal_margin {
 	height: 6px;
 	width: 100%;
 	margin: auto 0;
@@ -28,11 +29,8 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	justify-items: space-between;
-}
-
-.content_container {
 	width: 90vw;
-	height: 90vh;
+	height: 100%;
 	margin-left: 10vw;
+	overflow: auto;
 }

@@ -12,7 +12,7 @@ export default function Blog() {
 					crossorigin="anonymous"
 				/>
 			</Head>
-			<Layout inner pageName={"Blog"}></Layout>;
+			<Layout inner pageName={"Blog"}></Layout>
 		</>
 	);
 }

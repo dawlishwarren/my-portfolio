@@ -4,6 +4,10 @@
 	height: auto;
 	max-height: 20vh;
 	min-height: var(--nav-size);
+	overflow-x: hidden;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
 }
 
 .home_container {
@@ -14,20 +18,20 @@
 }
 
 .inner_container {
-	width: 100%;
+	width: 90vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 2rem;
 	min-height: 100%;
-	margin-left: calc(15vw - 6px);
+	margin-left: calc(10vw - 6px);
+	overflow: hidden;
 }
 
 .navbar_items {
 	width: 25vw;
 	display: flex;
 	flex-direction: row;
-	/* justify-content: space-between; */
 	margin: 0;
 	position: relative;
 }

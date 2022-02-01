@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from './about.module.css';
+import React from "react";
+import styles from "./about.module.css";
 
 const AboutInfo = () => {
 	return (
 		<>
-			<h2 className={styles.title}>My Story</h2>
+			<h2 className={styles.title}>Background</h2>
 			<div className={styles.golden_grid}>
 				<div className={styles.primary_textbox}>
 					<p className={styles.text}>
