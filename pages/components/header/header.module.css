@@ -1,0 +1,48 @@
+.header_container {
+	display: flex;
+	justify-content: space-between;
+	height: auto;
+	max-height: 20vh;
+	min-height: var(--nav-size);
+	overflow-x: hidden;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+}
+
+.home_container {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	min-height: 100%;
+}
+
+.inner_container {
+	width: 90vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+	min-height: 100%;
+	margin-left: calc(10vw - 6px);
+	overflow: hidden;
+}
+
+.navbar_items {
+	width: 25vw;
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	position: relative;
+}
+
+.navbar_items > * {
+	padding: 1rem;
+}
+
+.page_title {
+	display: block;
+	margin: 1rem;
+	font-size: 2rem;
+	width: 50%;
+}
