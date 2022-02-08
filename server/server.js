@@ -1,7 +1,6 @@
 // Initialising express
 const express = require("express");
 const app = express();
-app.use(express.json());
 
 // Setting up port
 const PORT = process.env.PORT || 5000;
@@ -10,6 +9,9 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
 });
+
+// Init middleware
+app.use(express.json({ extended: false }));
 
 // Connect to DB
 const connectDB = require("./config/connect");

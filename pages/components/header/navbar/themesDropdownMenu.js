@@ -1,7 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react';
-import ThemeContext from '../../../../context/themeContext/theme-context';
-import { getAllThemesFromLocalStorage } from '../../../../utils/localStorage';
-import styles from './navigation.module.css';
+import React, { useContext, useState, useEffect } from "react";
+import ThemeContext from "../../../../context/themeContext/theme-context";
+import { getAllThemesFromLocalStorage } from "../../../../utils/localStorage";
+import styles from "./navigation.module.css";
+import Spinner from "../../spinner/spinner";
 
 const ThemesDropdownMenu = (props) => {
 	const { setActiveTheme, activeTheme, loading } = useContext(ThemeContext);
@@ -10,7 +11,7 @@ const ThemesDropdownMenu = (props) => {
 	});
 	useEffect(() => {
 		// Get all available themes
-		const allThemes = getAllThemesFromLocalStorage('all-themes');
+		const allThemes = getAllThemesFromLocalStorage("all-themes");
 		const themesToArray = [];
 
 		// Populate an array with them
@@ -38,10 +39,10 @@ const ThemesDropdownMenu = (props) => {
 				<Spinner />
 			) : (
 				<div
-					className={[props.isOpen ? 'open' : '', styles.dropdown].join(' ')}>
+					className={[props.isOpen ? "open" : "", styles.dropdown].join(" ")}>
 					{themeState.colorThemes.map((theme, index) => (
 						<li key={theme.id} className={styles.menu_item}>
-							<a href='#' onClick={() => setButtonActiveTheme(index)}>
+							<a href="#" onClick={() => setButtonActiveTheme(index)}>
 								{theme.title}
 							</a>
 						</li>

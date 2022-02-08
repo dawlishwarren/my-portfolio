@@ -1,20 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Link from 'next/link';
-import styles from './navigation.module.css';
-import { navLinks } from '../../../../utils/dataToMap';
-import ThemeContext from '../../../../context/themeContext/theme-context';
-import Spinner from '../../spinner/spinner';
+import React, { useContext, useEffect, useState } from "react";
+import Link from "next/link";
+import styles from "./navigation.module.css";
+import { navLinks } from "../../../../utils/dataToMap";
+import ThemeContext from "../../../../context/themeContext/theme-context";
+import Spinner from "../../spinner/spinner";
 
 const NavigationSideMenu = (props) => {
 	const { activeTheme, loading } = useContext(ThemeContext);
 	const [menuState, setState] = useState({
 		menuItems: [],
-		currentPage: '',
+		currentPage: "",
 	});
 
 	useEffect(() => {
 		hideCurrentPageNav(props.name);
-	}, []);
+	}, [props.name]);
 
 	function hideCurrentPageNav(currentPageName) {
 		const filtered = navLinks.filter(
@@ -38,10 +38,10 @@ const NavigationSideMenu = (props) => {
 				<div
 					className={[
 						styles.sidenav_container,
-						props.isOpen ? `${styles.open}` : '',
-					].join(' ')}>
+						props.isOpen ? `${styles.open}` : "",
+					].join(" ")}>
 					<a
-						href='#'
+						href="#"
 						className={styles.close_button}
 						onClick={() => props.setMenuStatus(!props.isOpen)}>
 						X
@@ -49,7 +49,7 @@ const NavigationSideMenu = (props) => {
 					<ul>
 						{menuItems.map((link, index) => {
 							return (
-								<Link href={link.path}>
+								<Link href={link.path} key={index}>
 									<li className={styles.nav_links} key={index}>
 										<p>{link.name}</p>
 									</li>
