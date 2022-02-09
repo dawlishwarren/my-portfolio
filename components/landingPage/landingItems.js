@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react';
-import Layout from '../layout/layout';
-import styles from './landingItems.module.css';
-import ThemeContext from '../../../context/themeContext/theme-context';
-import LandingInner from './landingInner';
-import { landingItemData } from '../../../utils/dataToMap';
+import React, { useContext, useState, useEffect } from "react";
+import Layout from "../layout/layout";
+import styles from "./landingItems.module.css";
+import ThemeContext from "../../context/themeContext/theme-context";
+import LandingInner from "./landingInner";
+import { landingItemData } from "../../utils/dataToMap";
 
 const LandingItems = () => {
 	// State management
@@ -49,7 +49,7 @@ const LandingItems = () => {
 	}
 
 	function isActiveTheme() {
-		if (activeTheme !== undefined || null || '') {
+		if (activeTheme !== undefined || null || "") {
 			return activeTheme;
 		}
 	}
@@ -60,7 +60,7 @@ const LandingItems = () => {
 					.${styles.container} {
 						border: ${!loading && isActiveTheme()
 								? activeTheme.colors.border
-								: 'black'}
+								: "black"}
 							solid 5px;
 					}
 				`}</style>
@@ -78,7 +78,7 @@ const LandingItems = () => {
 								className={[
 									styles.title,
 									getAppropriateTitleRotationClass(index),
-								].join(' ')}>
+								].join(" ")}>
 								{object.name}
 							</h2>
 						)}

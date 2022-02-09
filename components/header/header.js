@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
-import ThemeContext from '../../../context/themeContext/theme-context';
-import PropTypes from 'prop-types';
-import styles from './header.module.css';
-import Navbar from './navbar/navbar';
-import NavItem from './navbar/navItem';
-import NavigationSideMenu from './navbar/navigationSideMenu';
-import ThemesDropdownMenu from './navbar/themesDropdownMenu';
+import React, { useContext, useState } from "react";
+import ThemeContext from "../../context/themeContext/theme-context";
+import PropTypes from "prop-types";
+import styles from "./header.module.css";
+import Navbar from "./navbar/navbar";
+import NavItem from "./navbar/navItem";
+import NavigationSideMenu from "./navbar/navigationSideMenu";
+import ThemesDropdownMenu from "./navbar/themesDropdownMenu";
 
 const Header = ({ home, inner, pageName }) => {
 	const { activeTheme, loading } = useContext(ThemeContext);
@@ -39,7 +39,7 @@ const Header = ({ home, inner, pageName }) => {
 								<ThemesDropdownMenu setMenuStatus={setIsColorMenuOpen} />
 							</NavItem>
 							<NavItem
-								icon={<i className={'fas fa-bars'}></i>}
+								icon={<i className={"fas fa-bars"}></i>}
 								isOpen={isNavMenuOpen}
 								setMenuStatus={setIsNavMenuOpen}>
 								<NavigationSideMenu

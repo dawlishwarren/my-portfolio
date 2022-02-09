@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
-import ThemeContext from "../../../../context/themeContext/theme-context";
-import { getAllThemesFromLocalStorage } from "../../../../utils/localStorage";
+import ThemeContext from "../../../context/themeContext/theme-context";
+import { getAllThemesFromLocalStorage } from "../../../utils/localStorage";
 import styles from "./navigation.module.css";
 import Spinner from "../../spinner/spinner";
 

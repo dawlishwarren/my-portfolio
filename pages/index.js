@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import LandingItems from "./components/landingPage/landingItems";
-import { siteTitle } from "./components/layout/layout";
+import LandingItems from "../components/landingPage/landingItems";
+import { siteTitle } from "../components/layout/layout";
 
 export default function Home() {
 	return (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./landingInner.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import ThemeContext from "../../../context/themeContext/theme-context";
+import ThemeContext from "../../context/themeContext/theme-context";
 // import { isActiveTheme } from "../../../utils/validation";
 
 const LandingInner = ({ data: { name, id, header, text, image } }) => {

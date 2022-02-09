@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./navigation.module.css";
-import { navLinks } from "../../../../utils/dataToMap";
-import ThemeContext from "../../../../context/themeContext/theme-context";
+import { navLinks } from "../../../utils/dataToMap";
+import ThemeContext from "../../../context/themeContext/theme-context";
 import Spinner from "../../spinner/spinner";
 
 const NavigationSideMenu = (props) => {
@@ -49,7 +49,7 @@ const NavigationSideMenu = (props) => {
 					<ul>
 						{menuItems.map((link, index) => {
 							return (
-								<Link href={link.path} key={index}>
+								<Link href={link.path} key={index} passHref>
 									<li className={styles.nav_links} key={index}>
 										<p>{link.name}</p>
 									</li>

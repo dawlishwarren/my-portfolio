@@ -2,10 +2,10 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import Spinner from "../spinner/spinner";
 import Header from "../header/header";
-import ThemeContext from "../../../context/themeContext/theme-context";
+import ThemeContext from "../../context/themeContext/theme-context";
 import { useContext, useEffect, useState } from "react";
-import { getAllThemesFromLocalStorage } from "../../../utils/localStorage";
-import { arrayIsPopulated } from "../../../utils/validation";
+import { getAllThemesFromLocalStorage } from "../../utils/localStorage";
+import { arrayIsPopulated } from "../../utils/validation";
 
 export const siteTitle = "Alex Warren | Web Designer";
 

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import styles from './navigation.module.css';
-import ThemeContext from '../../../../context/themeContext/theme-context';
+import React, { useContext, useState } from "react";
+import styles from "./navigation.module.css";
+import ThemeContext from "../../../context/themeContext/theme-context";
 
 const NavItem = (props) => {
 	const { activeTheme, loading } = useContext(ThemeContext);
@@ -10,7 +10,7 @@ const NavItem = (props) => {
 				<>
 					<li className={styles.nav_item}>
 						<a
-							href='#'
+							href="#"
 							className={styles.icon_button}
 							onClick={() => {
 								props.setMenuStatus(!props.isOpen);
