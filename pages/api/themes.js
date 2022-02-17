@@ -18,19 +18,7 @@ router.post(
 			return res.status(400).json({ errors: errors.array() });
 		}
 		// Destructuring request
-		const {
-			name,
-			title,
-			colors: {
-				body,
-				text,
-				border,
-				navigation: { background, dropdown },
-				accent: { primary, secondary },
-			},
-			isDefault,
-			isPrivate,
-		} = req.body;
+		const { body } = req;
 		try {
 			// See if theme exists
 			let theme = await Theme.findOne({ name });
@@ -41,23 +29,7 @@ router.post(
 			}
 			// Create new document if not
 			theme = new Theme({
-				name,
-				title,
-				colors: {
-					body,
-					text,
-					border,
-					navigation: {
-						background,
-						dropdown,
-					},
-					accent: {
-						primary,
-						secondary,
-					},
-				},
-				isDefault,
-				isPrivate,
+				body,
 			});
 			await theme.save();
 			res.send(theme);

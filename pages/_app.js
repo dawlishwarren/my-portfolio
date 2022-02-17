@@ -2,14 +2,16 @@ import "../styles/globals.css";
 import { setDataToLocalStorage } from "../utils/localStorage";
 import * as uiThemes from "../styles/themes.json";
 import ThemeState from "../context/themeContext/ThemeState";
+import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 	setDataToLocalStorage("all-themes", uiThemes.default);
-
 	return (
-		<ThemeState>
-			<Component {...pageProps} />
-		</ThemeState>
+		<SessionProvider session={session}>
+			<ThemeState>
+				<Component {...pageProps} />
+			</ThemeState>
+		</SessionProvider>
 	);
 }
 

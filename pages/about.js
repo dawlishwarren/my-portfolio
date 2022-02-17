@@ -1,8 +1,8 @@
 import AboutInfo from "../components/aboutPage/AboutInfo";
 import EducationTimeline from "../components/aboutPage/EducationTimeline";
-import Layout from "./components/layout/layout";
+import Layout from "../components/layout/layout";
 import Head from "next/head";
-import styles from "./components/aboutPage/about.module.css";
+import styles from "../components/aboutPage/about.module.css";
 import ThemeContext from "../context/themeContext/theme-context";
 import { useContext } from "react";
 

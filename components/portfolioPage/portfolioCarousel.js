@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { portfolioCarouselData } from "../../../utils/dataToMap";
+import { portfolioCarouselData } from "../../utils/dataToMap";
 import styles from "./portfolio.module.css";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 

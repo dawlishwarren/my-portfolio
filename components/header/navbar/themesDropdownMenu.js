@@ -38,8 +38,7 @@ const ThemesDropdownMenu = (props) => {
 			{loading && !colorThemes ? (
 				<Spinner />
 			) : (
-				<div
-					className={[props.isOpen ? "open" : "", styles.dropdown].join(" ")}>
+				<ul className={[props.isOpen ? "open" : "", styles.dropdown].join(" ")}>
 					{themeState.colorThemes.map((theme, index) => (
 						<li key={theme.id} className={styles.menu_item}>
 							<a href="#" onClick={() => setButtonActiveTheme(index)}>
@@ -47,7 +46,7 @@ const ThemesDropdownMenu = (props) => {
 							</a>
 						</li>
 					))}
-				</div>
+				</ul>
 			)}
 			<style jsx>{`
 				.${styles.dropdown} {

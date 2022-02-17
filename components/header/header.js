@@ -6,16 +6,24 @@ import Navbar from "./navbar/navbar";
 import NavItem from "./navbar/navItem";
 import NavigationSideMenu from "./navbar/navigationSideMenu";
 import ThemesDropdownMenu from "./navbar/themesDropdownMenu";
+import UserAuthDropdownMenu from "./navbar/userAuthDropdownMenu";
 
 const Header = ({ home, inner, pageName }) => {
 	const { activeTheme, loading } = useContext(ThemeContext);
 	const [isColorMenuOpen, setIsColorMenuOpen] = useState(false);
 	const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+	const [isAuthMenuOpen, setIsAuthMenuOpen] = useState(false);
 	return (
 		<header className={styles.header_container}>
 			{home && !loading && (
 				<div className={styles.home_container}>
 					<Navbar>
+						<NavItem
+							icon={<i className={`fas fa-solid fa-user `}></i>}
+							isOpen={isAuthMenuOpen}
+							setMenuStatus={setIsAuthMenuOpen}>
+							<UserAuthDropdownMenu setMenuStatus={setIsAuthMenuOpen} />
+						</NavItem>
 						<NavItem
 							icon={<i className={`fas fa-palette `}></i>}
 							isOpen={isColorMenuOpen}
@@ -32,6 +40,12 @@ const Header = ({ home, inner, pageName }) => {
 							<h3>{pageName}</h3>
 						</div>
 						<Navbar>
+							<NavItem
+								icon={<i className={`fas fa-solid fa-user `}></i>}
+								isOpen={isAuthMenuOpen}
+								setMenuStatus={setIsAuthMenuOpen}>
+								<UserAuthDropdownMenu setMenuStatus={setIsAuthMenuOpen} />
+							</NavItem>
 							<NavItem
 								icon={<i className={`fas fa-palette `}></i>}
 								isOpen={isColorMenuOpen}

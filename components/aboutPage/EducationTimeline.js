@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./about.module.css";
-import { learningTimeline } from "../../../utils/dataToMap";
+import { learningTimeline } from "../../utils/dataToMap";
 
 const EducationTimeline = () => {
 	return (
